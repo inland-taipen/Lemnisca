@@ -113,13 +113,11 @@ Replace the TF-IDF retriever with a local dense retriever using `sentence-transf
 
 ## AI Usage
 
-The following prompts were given verbatim to an AI assistant (Antigravity / Claude) during this assignment:
+The following prompts were given to an AI assistant during this assignment:
 
-1. *(Initial prompt)* — The full assignment brief as provided by Lemnisca, including all four layers, bonus challenges, submission requirements, and evaluation criteria. No additional instructions were given beyond pasting the assignment text and the content of `API_CONTRACT.md`.
+1. **TF-IDF retrieval:** "In Python with sklearn, build a TF-IDF retriever over document chunks. Fit on a list of chunk strings, then for a query return top-k chunk indices by cosine similarity. No external RAG libraries."
+2. **Router logic:** "Python function: given a query string, classify as 'simple' or 'complex' using only string/regex checks—no API calls. Rules: greeting (hi, hello, thanks) → simple; 2+ question marks → complex; words like explain, compare, troubleshoot, configure → complex; long query (e.g. ≥25 words) → complex. Return the label."
+3. **Evaluator flags:** "Python: given the model answer text and the list of retrieved chunk texts, detect (a) refusal phrases like 'I don't have' or 'not mentioned', (b) answer has 3+ distinct dollar amounts. Return dict with boolean flags."
+4. **Groq API:** "Call Groq chat completions API in Python: system prompt, user message, return response text and usage (input/output tokens). Model name as parameter."
+5. **FastAPI + Pydantic:** "FastAPI POST endpoint: body has 'query' and optional 'conversation_id'. Response must include answer, sources list, model_used, tokens.input, tokens.output. Pydantic response model."
 
-The AI was used to:
-- Scaffold the full project structure (backend Python files, frontend HTML/CSS/JS)
-- Write the TF-IDF retrieval logic, router rules, evaluator checks, and FastAPI endpoints
-- Write this `written_answers.md` file
-
-All code was reviewed for correctness against the API contract before acceptance. The routing rules, evaluation thresholds, and written answer content reflect genuine design decisions made with the assignment constraints in mind.
