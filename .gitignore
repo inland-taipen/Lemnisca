@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env
+
+# RAG cache
+backend/.rag_cache.pkl
+
+# Logs
+backend/logs/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node (if added later)
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
